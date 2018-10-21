@@ -14,6 +14,7 @@ public class ForecastDataRepositoryImpl implements ForecastDataRepository {
         this.apiClient = new OwmApiClient();
     }
 
+    @Override
     public ForecastWeatherData getForecastWeatherData(QueryParameters queryParameters) throws ApiResponseException {
         ForecastWeatherData forecastWeatherData = null;
         Response response = apiClient.doGet(FORECAST_WEATHER_PATH, queryParameters.build());
